@@ -1,9 +1,69 @@
 [
   {
-    "id": "0d32a1b6",
-    "jp": "﻿一人っきり",
+    "id": "5492b5f4",
+    "jp": "﻿この本には、詳しい説明は書かれていません。",
+    "en": "There is no detailed explanation in this book.",
+    "audio": "5492b5f4.mp3"
+  },
+  {
+    "id": "4fd2cd88",
+    "jp": "入学式は、このホールで行われます。",
+    "en": "The entrance ceremony will take place in this hall.",
+    "audio": "4fd2cd88.mp3"
+  },
+  {
+    "id": "4ce80f0e",
+    "jp": "これは、世界でいちばん大きいダイヤモンドだと。",
+    "en": "This is believed to be the biggest diamond in the world.",
+    "audio": "4ce80f0e.mp3"
+  },
+  {
+    "id": "bba1d9fd",
+    "jp": "昔は、その考えが正しいと思われていた。",
+    "en": "Such an idea used to be considered correct.",
+    "audio": "bba1d9fd.mp3"
+  },
+  {
+    "id": "60240e6b",
+    "jp": "友達の赤ちゃんを抱っこしたら、泣かれてしまった。",
+    "en": "When I held my friend's baby, it cried.",
+    "audio": "60240e6b.mp3"
+  },
+  {
+    "id": "f11be1be",
+    "jp": "雨に降られて、服が濡れてしまった。",
+    "en": "My clothes go soaked in the rain.",
+    "audio": "f11be1be.mp3"
+  },
+  {
+    "id": "7663b279",
+    "jp": "父に死なれて、大学を続けられなくなりました。",
+    "en": "I couldn't continue my university education after my father died.",
+    "audio": "7663b279.mp3"
+  },
+  {
+    "id": "5ec83de7",
+    "jp": "ちょっと気分が悪いので、早く帰らせてください。",
+    "en": "Since I am not feeling very well, could I go home early?",
+    "audio": "5ec83de7.mp3"
+  },
+  {
+    "id": "b9887309",
+    "jp": "あなたの会社のお話を聞かせてください。",
+    "en": "Please tell me about your company.",
+    "audio": "b9887309.mp3"
+  },
+  {
+    "id": "85cb02d4",
+    "jp": "手を洗わせてください。",
+    "en": "Could I wash my hands?",
+    "audio": "85cb02d4.mp3"
+  },
+  {
+    "id": "220c01a6",
+    "jp": "一人っきり",
     "en": "Be completely alone",
-    "audio": "0d32a1b6.mp3"
+    "audio": "220c01a6.mp3"
   },
   {
     "id": "09c5dea3",
@@ -52,5 +112,23 @@
     "jp": "窓を開けっぱなしで出てきた。",
     "en": "I left home with the windows open.",
     "audio": "96c9af76.mp3"
+  },
+  {
+    "id": "a6a1906c",
+    "jp": "水を出しっぱなしにしないでください。",
+    "en": "Please don't leave the water running.",
+    "audio": "a6a1906c.mp3"
+  },
+  {
+    "id": "36914870",
+    "jp": "二人っきりではなしをしたいです。",
+    "en": "I'd like to have a private talk with you.",
+    "audio": "36914870.mp3"
+  },
+  {
+    "id": "695fa7e9",
+    "jp": "彼ねあったのは１回っきりです。",
+    "en": "I've net him only once.",
+    "audio": "695fa7e9.mp3"
   }
 ]
