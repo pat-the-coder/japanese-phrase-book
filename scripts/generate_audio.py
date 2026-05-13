@@ -69,9 +69,10 @@ def main():
             audio_filename = f"{phrase_id}.mp3"
             audio_path = OUTPUT_DIR / audio_filename
             
-            print(f"Processing [{i+1}]: {jp_text}")
-            
-            if not audio_path.exists():
+            if audio_path.exists():
+                print(f"[{i+1}] Skipping existing: {jp_text}")
+            else:
+                print(f"[{i+1}] Generating audio: {jp_text}")
                 success = generate_audio(jp_text, audio_path)
                 if not success:
                     continue
@@ -86,7 +87,18 @@ def main():
     with open(PHRASES_JSON, "w", encoding="utf-8") as f:
         json.dump(phrases, f, ensure_ascii=False, indent=2)
     
+    # --- Cleanup Orphans ---
+    valid_ids = {p["audio"] for p in phrases}
+    orphans_removed = 0
+    for file in OUTPUT_DIR.glob("*.mp3"):
+        if file.name not in valid_ids:
+            print(f"Cleaning up orphan: {file.name}")
+            file.unlink()
+            orphans_removed += 1
+
     print(f"\nDone! Generated {len(phrases)} phrases in {PHRASES_JSON}")
+    if orphans_removed > 0:
+        print(f"Removed {orphans_removed} orphan audio files.")
 
 if __name__ == "__main__":
     main()
