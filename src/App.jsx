@@ -17,7 +17,7 @@ const App = () => {
 
   // Load phrases
   useEffect(() => {
-    fetch('/phrases.json')
+    fetch('phrases.json')
       .then(res => res.json())
       .then(data => {
         setPhrases(data);
@@ -34,7 +34,7 @@ const App = () => {
     
     const phrase = phrases[index];
     if (audioRef.current) {
-      audioRef.current.src = `/audio/${phrase.audio}`;
+      audioRef.current.src = `audio/${phrase.audio}`;
       audioRef.current.play().catch(e => console.error("Playback failed:", e));
       setIsPlaying(true);
       setShowEnglish(false);
