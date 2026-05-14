@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
-  base: '/japanese-phrase-book/',
+  base: process.env.CAPACITOR_BUILD ? './' : '/japanese-phrase-book/',
   plugins: [
     react(),
     VitePWA({

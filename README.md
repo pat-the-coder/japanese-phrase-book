@@ -35,6 +35,10 @@ To add new phrases or regenerate audio:
    ```bash
    .venv/bin/python3 scripts/generate_audio.py
    ```
+   *To force regeneration of all audio files:*
+   ```bash
+   .venv/bin/python3 scripts/generate_audio.py --force
+   ```
    *See [README_AUDIO.md](./README_AUDIO.md) for detailed audio setup instructions.*
 
 ### 3. Web App Development
@@ -45,9 +49,31 @@ npm install
 # Start development server
 npm run dev
 
-# Build for production
+# Build for web production
 npm run build
+
+# Build for Capacitor and sync with iOS
+npm run build:cap
+
+# Open the project in Xcode
+npm run ios:open
 ```
+
+## Native iOS App (Capacitor)
+
+The app is integrated with Capacitor to provide a native iOS experience with superior background audio stability.
+
+### 1. Prerequisites
+- **Xcode**: Required for building and running the iOS app.
+- **CocoaPods**: Required for managing native dependencies (`brew install cocoapods`).
+
+### 2. Workflow
+- **Sync Changes**: After making changes to the React code, run `npm run build:cap` to update the native iOS project.
+- **Run on Device**: Use `npm run ios:open` to launch Xcode, then select your device and press Play.
+
+### 3. Native Enhancements
+- **Stable Background Playback**: Uses `@capacitor-community/native-audio` to ensure audio keeps playing even when the app is minimized or the device is locked.
+- **Audio Background Mode**: Configured in `Info.plist` to prevent the OS from suspending the audio process.
 
 ## Deployment
 

@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Play, Pause, SkipBack, SkipForward, RotateCcw, History, Settings, X } from 'lucide-react';
+import { Play, Pause, SkipBack, SkipForward, RotateCcw, History, Settings, X, Eye, EyeOff } from 'lucide-react';
+import { Capacitor } from '@capacitor/core';
+import { NativeAudio } from '@capacitor-community/native-audio';
 
 const App = () => {
   const [phrases, setPhrases] = useState([]);
@@ -8,14 +10,155 @@ const App = () => {
   const [showEnglish, setShowEnglish] = useState(false);
   const [history, setHistory] = useState([]);
   const [showHistory, setShowHistory] = useState(false);
-  const [autoPlay, setAutoPlay] = useState(false);
-  const [delay, setDelay] = useState(10000); // 10 seconds default
+  const [autoPlay, setAutoPlay] = useState(() => localStorage.getItem('autoPlay') === 'true');
+  const [delay, setDelay] = useState(() => Number(localStorage.getItem('delay')) || 10000);
+  const [alwaysShowEnglish, setAlwaysShowEnglish] = useState(() => localStorage.getItem('alwaysShowEnglish') === 'true');
   const [loading, setLoading] = useState(true);
+  const [debugStatus, setDebugStatus] = useState('');
 
   const audioRef = useRef(null);
   const timerRef = useRef(null);
+  const isNative = Capacitor.isNativePlatform();
 
-  // Load phrases
+  // Refs for background-safe access in listeners
+  const delayRef = useRef(delay);
+  const isPlayingRef = useRef(isPlaying);
+  const autoPlayRef = useRef(autoPlay);
+  const alwaysShowEnglishRef = useRef(alwaysShowEnglish);
+  const silenceCounterRef = useRef(0);
+  const isWaitingRef = useRef(false);
+  const phrasesRef = useRef(phrases);
+
+  useEffect(() => { 
+    delayRef.current = delay; 
+    localStorage.setItem('delay', delay);
+  }, [delay]);
+  
+  useEffect(() => { 
+    isPlayingRef.current = isPlaying; 
+  }, [isPlaying]);
+  
+  useEffect(() => { 
+    autoPlayRef.current = autoPlay; 
+    localStorage.setItem('autoPlay', autoPlay);
+  }, [autoPlay]);
+
+  useEffect(() => {
+    alwaysShowEnglishRef.current = alwaysShowEnglish;
+    localStorage.setItem('alwaysShowEnglish', alwaysShowEnglish);
+  }, [alwaysShowEnglish]);
+
+  useEffect(() => { 
+    phrasesRef.current = phrases; 
+  }, [phrases]);
+
+  // 1. playPhrase
+  const playPhrase = useCallback(async (index) => {
+    const currentPhrases = phrasesRef.current;
+    if (index < 0 || index >= currentPhrases.length) return;
+    
+    const phrase = currentPhrases[index];
+    setDebugStatus(`Playing: ${phrase.audio}`);
+    
+    setHistory(prev => {
+      const newHistory = [phrase, ...prev.filter(p => p.id !== phrase.id)];
+      return newHistory.slice(0, 50);
+    });
+
+    setIsPlaying(true);
+    setShowEnglish(alwaysShowEnglishRef.current);
+    isWaitingRef.current = false;
+    silenceCounterRef.current = 0;
+
+    if (isNative) {
+      try {
+        await NativeAudio.stop({ assetId: 'silence' }).catch(() => {});
+        await NativeAudio.stop({ assetId: 'current' }).catch(() => {});
+        await NativeAudio.unload({ assetId: 'current' }).catch(() => {});
+        
+        await NativeAudio.preload({
+          assetId: 'current',
+          assetPath: `public/audio/${phrase.audio}`,
+          audioChannelNum: 1,
+          isComplex: true
+        });
+        
+        await NativeAudio.play({ assetId: 'current' });
+      } catch (e) {
+        setDebugStatus(`Error: ${e.message}`);
+        setIsPlaying(false);
+      }
+    } else if (audioRef.current) {
+      audioRef.current.src = `audio/${phrase.audio}`;
+      audioRef.current.play().catch(() => setIsPlaying(false));
+    }
+  }, [isNative]);
+
+  // 2. nextRandom
+  const nextRandom = useCallback(() => {
+    const currentPhrases = phrasesRef.current;
+    if (currentPhrases.length === 0) return;
+    
+    let nextIdx;
+    if (currentPhrases.length === 1) {
+      nextIdx = 0;
+    } else {
+      do {
+        nextIdx = Math.floor(Math.random() * currentPhrases.length);
+      } while (nextIdx === currentIndex);
+    }
+    
+    setCurrentIndex(nextIdx);
+    playPhrase(nextIdx);
+  }, [currentIndex, playPhrase]);
+
+  // Stable ref for nextRandom to use in listener
+  const nextRandomRef = useRef(nextRandom);
+  useEffect(() => { nextRandomRef.current = nextRandom; }, [nextRandom]);
+
+  // 3. Native Heartbeat Listener
+  useEffect(() => {
+    if (!isNative) return;
+
+    NativeAudio.preload({
+      assetId: 'silence',
+      assetPath: 'public/audio/silence.mp3',
+      audioChannelNum: 1,
+      isComplex: true
+    }).catch(() => {});
+
+    const listener = NativeAudio.addListener('complete', (data) => {
+      if (data.assetId === 'current') {
+        if (autoPlayRef.current) {
+          isWaitingRef.current = true;
+          silenceCounterRef.current = 0;
+          setDebugStatus('Waiting...');
+          NativeAudio.play({ assetId: 'silence' }).catch(() => {});
+        } else {
+          setIsPlaying(false);
+        }
+      } else if (data.assetId === 'silence') {
+        if (isWaitingRef.current && isPlayingRef.current) {
+          silenceCounterRef.current += 1;
+          const currentDelay = delayRef.current;
+          
+          if (silenceCounterRef.current * 1000 >= currentDelay) {
+            isWaitingRef.current = false;
+            silenceCounterRef.current = 0;
+            nextRandomRef.current();
+          } else {
+            NativeAudio.play({ assetId: 'silence' }).catch(() => {});
+          }
+        }
+      }
+    });
+
+    return () => {
+      listener.then(l => l.remove());
+    };
+  }, [isNative]);
+
+  // 4. Load phrases
   useEffect(() => {
     fetch('phrases.json')
       .then(res => res.json())
@@ -24,46 +167,12 @@ const App = () => {
         setLoading(false);
       })
       .catch(err => {
-        console.error("Failed to load phrases:", err);
+        setDebugStatus(`Load error: ${err.message}`);
         setLoading(false);
       });
   }, []);
 
-  const playPhrase = useCallback((index) => {
-    if (index < 0 || index >= phrases.length) return;
-    
-    const phrase = phrases[index];
-    if (audioRef.current) {
-      audioRef.current.src = `audio/${phrase.audio}`;
-      audioRef.current.play().catch(e => console.error("Playback failed:", e));
-      setIsPlaying(true);
-      setShowEnglish(false);
-      
-      // Update history
-      setHistory(prev => {
-        const newHistory = [phrase, ...prev.filter(p => p.id !== phrase.id)];
-        return newHistory.slice(0, 50); // Keep last 50
-      });
-    }
-  }, [phrases]);
-
-  const nextRandom = useCallback(() => {
-    if (phrases.length === 0) return;
-    
-    let nextIdx;
-    if (phrases.length === 1) {
-      nextIdx = 0;
-    } else {
-      // Simple logic to avoid immediate repeat
-      do {
-        nextIdx = Math.floor(Math.random() * phrases.length);
-      } while (nextIdx === currentIndex);
-    }
-    
-    setCurrentIndex(nextIdx);
-    playPhrase(nextIdx);
-  }, [phrases, currentIndex, playPhrase]);
-
+  // 5. User Interaction Handlers
   const togglePlay = () => {
     if (currentIndex === -1) {
       nextRandom();
@@ -71,22 +180,32 @@ const App = () => {
     }
 
     if (isPlaying) {
-      audioRef.current?.pause();
+      if (isNative) {
+        NativeAudio.stop({ assetId: 'current' }).catch(() => {});
+        NativeAudio.stop({ assetId: 'silence' }).catch(() => {});
+        isWaitingRef.current = false;
+      } else {
+        audioRef.current?.pause();
+      }
       setIsPlaying(false);
+      setDebugStatus('Paused');
       if (timerRef.current) clearTimeout(timerRef.current);
     } else {
-      audioRef.current?.play();
       setIsPlaying(true);
+      setDebugStatus('Playing...');
+      playPhrase(currentIndex);
     }
   };
 
   const handleEnded = () => {
-    if (autoPlay) {
-      timerRef.current = setTimeout(() => {
-        nextRandom();
-      }, delay);
-    } else {
-      setIsPlaying(false);
+    if (!isNative) {
+      if (autoPlay) {
+        timerRef.current = setTimeout(() => {
+          nextRandom();
+        }, delay);
+      } else {
+        setIsPlaying(false);
+      }
     }
   };
 
@@ -102,6 +221,7 @@ const App = () => {
 
   return (
     <div className="container">
+      {/* Debug banner removed as requested implicitly by moving to polish phase */}
       <header>
         <h1>Japanese Phrase Book</h1>
         <button onClick={() => setShowHistory(true)} className="icon-button">
@@ -116,11 +236,11 @@ const App = () => {
               {currentPhrase.jp}
             </div>
             
-            <div className={`english-text ${showEnglish ? 'visible' : ''}`}>
+            <div className={`english-text ${(showEnglish || alwaysShowEnglish) ? 'visible' : ''}`}>
               {currentPhrase.en}
             </div>
 
-            {!showEnglish && (
+            {(!showEnglish && !alwaysShowEnglish) && (
               <button className="show-button" onClick={() => setShowEnglish(true)}>
                 Show English
               </button>
@@ -155,30 +275,39 @@ const App = () => {
           <label className="toggle">
             <input 
               type="checkbox" 
-              checked={autoPlay} 
-              onChange={(e) => setAutoPlay(e.target.checked)} 
+              checked={alwaysShowEnglish} 
+              onChange={(e) => setAlwaysShowEnglish(e.target.checked)} 
             />
-            <span>Auto-play</span>
+            <span>Always Show English</span>
           </label>
 
-          <select 
-            value={delay} 
-            onChange={(e) => setDelay(Number(e.target.value))}
-            disabled={!autoPlay}
-          >
-            <option value={5000}>5s delay</option>
-            <option value={10000}>10s delay</option>
-            <option value={15000}>15s delay</option>
-            <option value={20000}>20s delay</option>
-          </select>
+          <div className="autoplay-settings">
+            <label className="toggle">
+              <input 
+                type="checkbox" 
+                checked={autoPlay} 
+                onChange={(e) => setAutoPlay(e.target.checked)} 
+              />
+              <span>Auto-play</span>
+            </label>
+
+            <select 
+              value={delay} 
+              onChange={(e) => setDelay(Number(e.target.value))}
+              disabled={!autoPlay}
+            >
+              <option value={5000}>5s delay</option>
+              <option value={10000}>10s delay</option>
+              <option value={15000}>15s delay</option>
+              <option value={20000}>20s delay</option>
+            </select>
+          </div>
         </div>
       </footer>
 
       <audio 
         ref={audioRef} 
         onEnded={handleEnded}
-        onPlay={() => setIsPlaying(true)}
-        onPause={() => setIsPlaying(false)}
       />
 
       {/* History Drawer */}

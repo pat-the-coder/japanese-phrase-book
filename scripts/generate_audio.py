@@ -3,6 +3,7 @@ import csv
 import json
 import subprocess
 import hashlib
+import argparse
 from pathlib import Path
 
 # Configuration
@@ -11,7 +12,6 @@ OUTPUT_DIR = Path("public/audio")
 PHRASES_JSON = Path("public/phrases.json")
 
 # macOS Japanese Voice (Kyoko is usually best, but Otoya is also good)
-# On Mac command line, use "say -v '?'" to list available voices
 VOICE_NAME = "Otoya (Enhanced)"
 
 def generate_audio(text, output_file):
@@ -50,6 +50,10 @@ def generate_audio(text, output_file):
         return False
 
 def main():
+    parser = argparse.ArgumentParser(description="Generate audio files for Japanese phrases.")
+    parser.add_argument("--force", "-f", action="store_true", help="Force regeneration of all audio files.")
+    args = parser.parse_args()
+
     phrases = []
     if not os.path.exists(PHRASES_CSV):
         print(f"Error: {PHRASES_CSV} not found.")
@@ -69,10 +73,11 @@ def main():
             audio_filename = f"{phrase_id}.mp3"
             audio_path = OUTPUT_DIR / audio_filename
             
-            if audio_path.exists():
+            if audio_path.exists() and not args.force:
                 print(f"[{i+1}] Skipping existing: {jp_text}")
             else:
-                print(f"[{i+1}] Generating audio: {jp_text}")
+                action = "Regenerating" if args.force and audio_path.exists() else "Generating"
+                print(f"[{i+1}] {action} audio: {jp_text}")
                 success = generate_audio(jp_text, audio_path)
                 if not success:
                     continue
@@ -88,7 +93,10 @@ def main():
         json.dump(phrases, f, ensure_ascii=False, indent=2)
     
     # --- Cleanup Orphans ---
+    # Include silence.mp3 in valid_ids so it isn't deleted
     valid_ids = {p["audio"] for p in phrases}
+    valid_ids.add("silence.mp3") 
+    
     orphans_removed = 0
     for file in OUTPUT_DIR.glob("*.mp3"):
         if file.name not in valid_ids:
@@ -96,7 +104,7 @@ def main():
             file.unlink()
             orphans_removed += 1
 
-    print(f"\nDone! Generated {len(phrases)} phrases in {PHRASES_JSON}")
+    print(f"\nDone! Processed {len(phrases)} phrases in {PHRASES_JSON}")
     if orphans_removed > 0:
         print(f"Removed {orphans_removed} orphan audio files.")
 

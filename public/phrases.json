@@ -32,7 +32,7 @@
   {
     "id": "f11be1be",
     "jp": "雨に降られて、服が濡れてしまった。",
-    "en": "My clothes go soaked in the rain.",
+    "en": "My clothes got soaked in the rain.",
     "audio": "f11be1be.mp3"
   },
   {
@@ -128,7 +128,67 @@
   {
     "id": "695fa7e9",
     "jp": "彼ねあったのは１回っきりです。",
-    "en": "I've net him only once.",
+    "en": "I've met him only once.",
     "audio": "695fa7e9.mp3"
+  },
+  {
+    "id": "dc960583",
+    "jp": "怖がらないでください。",
+    "en": "Please don't be afriad.",
+    "audio": "dc960583.mp3"
+  },
+  {
+    "id": "65896f9a",
+    "jp": "恥ずかしがらないで、前に出てきてください。",
+    "en": "Please don't be shy and come up here.",
+    "audio": "65896f9a.mp3"
+  },
+  {
+    "id": "9e215ce0",
+    "jp": "田中さんが、あなたに会いたがっていましたよ。",
+    "en": "Tanaka-san said he'd like to see you.",
+    "audio": "9e215ce0.mp3"
+  },
+  {
+    "id": "426eb0d0",
+    "jp": "寒がり",
+    "en": "be sensitive to the cold",
+    "audio": "426eb0d0.mp3"
+  },
+  {
+    "id": "81ab2371",
+    "jp": "暑がり",
+    "en": "be sensitive to the heat",
+    "audio": "81ab2371.mp3"
+  },
+  {
+    "id": "8fcdc79f",
+    "jp": "怖がり",
+    "en": "be easily frightened",
+    "audio": "8fcdc79f.mp3"
+  },
+  {
+    "id": "c051dd21",
+    "jp": "あのう、教科書を見せて欲しいんですが…。",
+    "en": "Excuse me. Could I see your textbook?",
+    "audio": "c051dd21.mp3"
+  },
+  {
+    "id": "c057b5f3",
+    "jp": "あなたに教えてもらいたいことがあります。",
+    "en": "I have something I would like you to explain to me.",
+    "audio": "c057b5f3.mp3"
+  },
+  {
+    "id": "b5aa5c25",
+    "jp": "彼はそのことについて知っているふりをしているが、本当は知らないと思う。",
+    "en": "He pretends to know about it but I don't think he really does.",
+    "audio": "b5aa5c25.mp3"
+  },
+  {
+    "id": "59a37268",
+    "jp": "田中さんは独身のふりをしているが、結婚していて３人も子供がいる。",
+    "en": "Tanaka-san looks like a single guy but in fact he is married with three kids.",
+    "audio": "59a37268.mp3"
   }
 ]
