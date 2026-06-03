@@ -60,6 +60,60 @@
     "audio": "85cb02d4.mp3"
   },
   {
+    "id": "3c85cd97",
+    "jp": "明日は早く出かけるから、もう寝ないと。",
+    "en": "I must go to bed now since I will go early tomorrow morning.",
+    "audio": "3c85cd97.mp3"
+  },
+  {
+    "id": "b16f9401",
+    "jp": "試験まであと1ヶ月だ。頑張って勉強しないと。",
+    "en": "There is only one month to go before the exam. I must concentrate on my study.",
+    "audio": "b16f9401.mp3"
+  },
+  {
+    "id": "05c4819f",
+    "jp": "田中さんにメールの返信をしなくちゃ。",
+    "en": "I must respond to Tanaka-san's message.",
+    "audio": "05c4819f.mp3"
+  },
+  {
+    "id": "ee385150",
+    "jp": "『あれ？ここにあったチョコレートは？』『あ、食べちゃった。いけなかった？』",
+    "en": "\"Oh! What happened to the chocolate which was here?\" \"Oh, I ate it. I shouldn't have eaten it?\"",
+    "audio": "ee385150.mp3"
+  },
+  {
+    "id": "e3bffa98",
+    "jp": "試験が終わった！今日は飲んじゃおう！",
+    "en": "Oh, the exam is over! I am going to have a drink!",
+    "audio": "e3bffa98.mp3"
+  },
+  {
+    "id": "1d38235c",
+    "jp": "もしもし、すみません。車が混んじゃって。。。少し遅れます。",
+    "en": "Hello, the traffic is bad… I'll be a little late.",
+    "audio": "1d38235c.mp3"
+  },
+  {
+    "id": "f4cfdeb3",
+    "jp": "テストで間違ったとこるを、ノートに書いとこう。",
+    "en": "I will make a note of what I did wrong in the test.",
+    "audio": "f4cfdeb3.mp3"
+  },
+  {
+    "id": "2b75dcae",
+    "jp": "これ洗濯しといて。",
+    "en": "Can you wash this?",
+    "audio": "2b75dcae.mp3"
+  },
+  {
+    "id": "a1bcf234",
+    "jp": "トイレットペーパーがもうすぐなくなるから、買っとかないと。",
+    "en": "We are running out of toilet paper. We'll have to buy some more.",
+    "audio": "a1bcf234.mp3"
+  },
+  {
     "id": "220c01a6",
     "jp": "一人っきり",
     "en": "Be completely alone",
@@ -120,10 +174,10 @@
     "audio": "a6a1906c.mp3"
   },
   {
-    "id": "36914870",
-    "jp": "二人っきりではなしをしたいです。",
+    "id": "a287c818",
+    "jp": "二人っきりで話をしたいです。",
     "en": "I'd like to have a private talk with you.",
-    "audio": "36914870.mp3"
+    "audio": "a287c818.mp3"
   },
   {
     "id": "695fa7e9",
@@ -150,10 +204,10 @@
     "audio": "9e215ce0.mp3"
   },
   {
-    "id": "426eb0d0",
-    "jp": "寒がり",
+    "id": "73a011a0",
+    "jp": "さむがり",
     "en": "be sensitive to the cold",
-    "audio": "426eb0d0.mp3"
+    "audio": "73a011a0.mp3"
   },
   {
     "id": "81ab2371",
@@ -298,5 +352,719 @@
     "jp": "野球にかわり、サッカーがさかんになってきた。",
     "en": "Soccer has overtaken baseball in popularity.",
     "audio": "cb0f41ff.mp3"
+  },
+  {
+    "id": "ab3af7e5",
+    "jp": "それは米粒くらいの大きさです。",
+    "en": "It's about the size of a grain of rice.",
+    "audio": "ab3af7e5.mp3"
+  },
+  {
+    "id": "e9951bea",
+    "jp": "この洗剤は、面白いほど汚れが落ちる。",
+    "en": "This detergent removes stains so well. It's unbelievable.",
+    "audio": "e9951bea.mp3"
+  },
+  {
+    "id": "4305ed13",
+    "jp": "飽きるほど食べた。",
+    "en": "I ate so much that I don't want to see anymore food.",
+    "audio": "4305ed13.mp3"
+  },
+  {
+    "id": "258ecc45",
+    "jp": "宿題が多すぎて、泣きたいくらいだ。",
+    "en": "I have so much homework, I want to cry.",
+    "audio": "258ecc45.mp3"
+  },
+  {
+    "id": "9507021f",
+    "jp": "若い人ほど朝寝坊をする。",
+    "en": "Young people seem to oversleep more.",
+    "audio": "9507021f.mp3"
+  },
+  {
+    "id": "0ab13745",
+    "jp": "伝統的なものは、古いほど価値がある。",
+    "en": "Traditional items have more value if they are older.",
+    "audio": "0ab13745.mp3"
+  },
+  {
+    "id": "4e8d7e6b",
+    "jp": "彼のことを知れば知るほど好きになる。",
+    "en": "The more I get to know him, the better I like him.",
+    "audio": "4e8d7e6b.mp3"
+  },
+  {
+    "id": "8896e0d6",
+    "jp": "荷物は少ければ少ないほどいい。",
+    "en": "The less baggage you have, the better.",
+    "audio": "8896e0d6.mp3"
+  },
+  {
+    "id": "58f43d9d",
+    "jp": "彼女くらい親切な人はいない。",
+    "en": "There is no one as friendly as her.",
+    "audio": "58f43d9d.mp3"
+  },
+  {
+    "id": "954e6fbf",
+    "jp": "今年ほど雪の降った年はなかった。",
+    "en": "It has snowed more this year than in any other year.",
+    "audio": "954e6fbf.mp3"
+  },
+  {
+    "id": "cc175664",
+    "jp": "君が謝ることはないよ。",
+    "en": "There is no need to apologize.",
+    "audio": "cc175664.mp3"
+  },
+  {
+    "id": "7e4d5056",
+    "jp": "来ることはありません。郵送でいいですよ。",
+    "en": "You don't need to come. Just send it by post.",
+    "audio": "7e4d5056.mp3"
+  },
+  {
+    "id": "11036414",
+    "jp": "田中さんから電話があって、少し遅れるということです。",
+    "en": "Tanaka-san called and he said he would be a little late.",
+    "audio": "11036414.mp3"
+  },
+  {
+    "id": "a92571ba",
+    "jp": "試験の結果は70%、つまり合格ということだ。",
+    "en": "The results of the test were 70%. In other words, you passed.",
+    "audio": "a92571ba.mp3"
+  },
+  {
+    "id": "748c35ee",
+    "jp": "暖かくして、ゆっくり休むことだ。",
+    "en": "You should keep warm, relax and rest.",
+    "audio": "748c35ee.mp3"
+  },
+  {
+    "id": "4040df7c",
+    "jp": "無理をしないことです。",
+    "en": "Don't push yourself too hard.",
+    "audio": "4040df7c.mp3"
+  },
+  {
+    "id": "d0d69261",
+    "jp": "合格できたら、どんなに嬉しいことか。",
+    "en": "How happy would I be if I passed!",
+    "audio": "d0d69261.mp3"
+  },
+  {
+    "id": "3261fde6",
+    "jp": "何度注意したことか。",
+    "en": "How many times have I warned you?",
+    "audio": "3261fde6.mp3"
+  },
+  {
+    "id": "844217f1",
+    "jp": "国へ帰るのは、来週だっけ？",
+    "en": "You said that you were going back to your country next week, didn't you?",
+    "audio": "844217f1.mp3"
+  },
+  {
+    "id": "a75be204",
+    "jp": "明日のパーティーのこと、話たっけ？",
+    "en": "Did I tell you about tomorrow's party?",
+    "audio": "a75be204.mp3"
+  },
+  {
+    "id": "b655be53",
+    "jp": "できるまで、やるしかない。",
+    "en": "You must try until you get it.",
+    "audio": "b655be53.mp3"
+  },
+  {
+    "id": "19ed6db2",
+    "jp": "直せないから、新しいのを買うしかなかった。",
+    "en": "I had no choice but to buy a new one since it couldn't be fixed.",
+    "audio": "19ed6db2.mp3"
+  },
+  {
+    "id": "3b9f118d",
+    "jp": "『田中さん、結婚してるんだって。』『へー、知らなかった。』",
+    "en": "\"I just found out Tanaka-san is married!\" \"Is that so? I didn't know.\"",
+    "audio": "3b9f118d.mp3"
+  },
+  {
+    "id": "7b7bf46a",
+    "jp": "試験の範囲は、教科書の最初から50ページまでだって。",
+    "en": "The test will cover up to Page 50 in the textbook.",
+    "audio": "7b7bf46a.mp3"
+  },
+  {
+    "id": "b4e0eb69",
+    "jp": "『どうして食べないの？』『だって、まずいんだもん。』",
+    "en": "\"Why didn't you eat it?\" \"Because it tastes awful.\"",
+    "audio": "b4e0eb69.mp3"
+  },
+  {
+    "id": "0ccecc01",
+    "jp": "今日の試験、できなかった…。勉強しなかったんだもん、仕方がない。",
+    "en": "I didn't do well on the test today. I can't complain because I didn't study much.",
+    "audio": "0ccecc01.mp3"
+  },
+  {
+    "id": "e739365c",
+    "jp": "父の兄、つまり私の叔父は、医者をしている。",
+    "en": "My father's elder brother, in other words, my uncle, is a doctor.",
+    "audio": "e739365c.mp3"
+  },
+  {
+    "id": "66e4d3a5",
+    "jp": "田中さんは、携帯もパソコンも持っていない。つまり、メールで連絡はできないのだ。",
+    "en": "Tanaka-san doesn't have a cell phone or a PC. In other words, we can't contact him by email.",
+    "audio": "66e4d3a5.mp3"
+  },
+  {
+    "id": "2b8caf90",
+    "jp": "隣の駅で事故があったらしい。そのために電車が遅れている。",
+    "en": "It looks like there is an accident at the next station. The train is delayed because of that.",
+    "audio": "2b8caf90.mp3"
+  },
+  {
+    "id": "2ce57da4",
+    "jp": "留学するつもりだ。そのために、バイトしてお金を貯めている。",
+    "en": "I am planning to study abroad. I am saving money by working part-time.",
+    "audio": "2ce57da4.mp3"
+  },
+  {
+    "id": "98ce68a5",
+    "jp": "父は、人の何倍も努力した。その結果、仕事で成功した。",
+    "en": "My father worked os much harder than anyone else. As a result, he has succeeded in his career.",
+    "audio": "98ce68a5.mp3"
+  },
+  {
+    "id": "92e2342a",
+    "jp": "３ヶ月ダイエットを続けた。その結果、5キロ痩せた。",
+    "en": "I continued to diet for three months. As a result, I lost 5 kilos.",
+    "audio": "92e2342a.mp3"
+  },
+  {
+    "id": "74faf0b0",
+    "jp": "来週、国に帰る予定です。なぜなら、親友の結婚式に出席するからです。",
+    "en": "I am going back home next week to attend my best friend's wedding.",
+    "audio": "74faf0b0.mp3"
+  },
+  {
+    "id": "b635aa22",
+    "jp": "学校を変えた。なぜかというと、僕のレベルのクラスがなかったからだ。",
+    "en": "I changed schools because there was no class available at my level.",
+    "audio": "b635aa22.mp3"
+  },
+  {
+    "id": "72cf5a7b",
+    "jp": "彼は、勉強はもちろんスポーツも良くできる。",
+    "en": "He is not only a good student, he is a good athlete as well.",
+    "audio": "72cf5a7b.mp3"
+  },
+  {
+    "id": "0a0e1f2c",
+    "jp": "キャベツは炒めて食べるのはもちろん、生で食べても美味しいです。",
+    "en": "Cabbage tastes good raw or sauteed in a pan.",
+    "audio": "0a0e1f2c.mp3"
+  },
+  {
+    "id": "a2c016b8",
+    "jp": "あの店は、味が悪いばかりか、店員の態度も酷い。",
+    "en": "That restaurant's service is terrible, let alone its food.",
+    "audio": "a2c016b8.mp3"
+  },
+  {
+    "id": "03af9008",
+    "jp": "私は、漢字ばかりか、まだひらがなも書けません。",
+    "en": "I can't write hiragana, let alone kanji.",
+    "audio": "03af9008.mp3"
+  },
+  {
+    "id": "64eb6d34",
+    "jp": "試験問題は昨年に比べて優しくなった。",
+    "en": "Compared to last year, the questions this year are easier.",
+    "audio": "64eb6d34.mp3"
+  },
+  {
+    "id": "ec5d0811",
+    "jp": "店で買うのに比べ、通信販売は便利だが、欠点もある。",
+    "en": "Ordering from a catalogue is more convenient than shopping in a store, but there are drawbacks.",
+    "audio": "ec5d0811.mp3"
+  },
+  {
+    "id": "91e1144c",
+    "jp": "田中先生は、生徒に対して厳しい。",
+    "en": "Tanaka-sensei is a strict techer.",
+    "audio": "91e1144c.mp3"
+  },
+  {
+    "id": "72377921",
+    "jp": "真面目な長男に対して、次男は遊んでばかりで学校もよく休む。",
+    "en": "Contrary to my hardworking eldest son, my second son plays around and often plays hooky.",
+    "audio": "72377921.mp3"
+  },
+  {
+    "id": "9414683f",
+    "jp": "やっとレポートを書き上げた。",
+    "en": "I finally finished my paper.",
+    "audio": "9414683f.mp3"
+  },
+  {
+    "id": "cef8fe72",
+    "jp": "ケーキが焼き上がりましたよ。",
+    "en": "The pastry is just out of the oven.",
+    "audio": "cef8fe72.mp3"
+  },
+  {
+    "id": "0c147a2d",
+    "jp": "ご飯の量が多くて、食べきれないよ。",
+    "en": "I can't finish the rice because there is so much.",
+    "audio": "0c147a2d.mp3"
+  },
+  {
+    "id": "b2ed2f68",
+    "jp": "長い小説を、2日間で読み切った。",
+    "en": "I finished reading a long novel in two days.",
+    "audio": "b2ed2f68.mp3"
+  },
+  {
+    "id": "d881464a",
+    "jp": "疲れ切った様子",
+    "en": "very tired condition",
+    "audio": "d881464a.mp3"
+  },
+  {
+    "id": "26c3e02b",
+    "jp": "この本はまだ読みかけだ。",
+    "en": "I haven't finished the book.",
+    "audio": "26c3e02b.mp3"
+  },
+  {
+    "id": "3e3dcc20",
+    "jp": "お風呂に入りかけた時に電話が鳴った。",
+    "en": "The phone rang when I was about to get in the bath.",
+    "audio": "3e3dcc20.mp3"
+  },
+  {
+    "id": "744d4252",
+    "jp": "焼きたてのパンは美味しい。",
+    "en": "Freshly baked bread is really good.",
+    "audio": "744d4252.mp3"
+  },
+  {
+    "id": "46be3962",
+    "jp": "あのスーパーは、取り立ての新鮮な野菜を売っている。",
+    "en": "That grocery store sells very fresh vegetables.",
+    "audio": "46be3962.mp3"
+  },
+  {
+    "id": "1b066b2c",
+    "jp": "もっと日本語が上手く話せたらいいなあ。",
+    "en": "I wish I could speak Japanese better.",
+    "audio": "1b066b2c.mp3"
+  },
+  {
+    "id": "369b4058",
+    "jp": "明日、雨が降らないといいなあ。",
+    "en": "I hope it won't rain tomorrow.",
+    "audio": "369b4058.mp3"
+  },
+  {
+    "id": "fd7aac78",
+    "jp": "遅刻してしまった。もっと早く家を出ればよかった。",
+    "en": "I am late. I wish I had left home much earlier.",
+    "audio": "fd7aac78.mp3"
+  },
+  {
+    "id": "4e75834a",
+    "jp": "田中さんにあんなことを言わなければよかった。",
+    "en": "I should not have siad such a thing to Tanaka-san.",
+    "audio": "4e75834a.mp3"
+  },
+  {
+    "id": "b7c08b82",
+    "jp": "パーティー、楽しかったよ。君も行けばよかったのに。",
+    "en": "I had a good time at the party. You should have come.",
+    "audio": "b7c08b82.mp3"
+  },
+  {
+    "id": "66bb9c70",
+    "jp": "安かったら買うのに。",
+    "en": "I could buy it if it were cheap.",
+    "audio": "66bb9c70.mp3"
+  },
+  {
+    "id": "b4eb844c",
+    "jp": "バス、早く来ないかなあ。",
+    "en": "I hope the bus will come soon.",
+    "audio": "b4eb844c.mp3"
+  },
+  {
+    "id": "0a5e8908",
+    "jp": "この実験、上手くいくかな。",
+    "en": "I wonder if the lab experiment will go well.",
+    "audio": "0a5e8908.mp3"
+  },
+  {
+    "id": "84d44deb",
+    "jp": "今日、富士山が見えるかなあ。",
+    "en": "I wonder if we could see Mount Fuji today.",
+    "audio": "84d44deb.mp3"
+  },
+  {
+    "id": "46cf01a9",
+    "jp": "映画が始まるまで30分あります。",
+    "en": "The movie won't start for half an hour.",
+    "audio": "46cf01a9.mp3"
+  },
+  {
+    "id": "1e269639",
+    "jp": "連絡があるまで待っています。",
+    "en": "I will wait until I hear from you.",
+    "audio": "1e269639.mp3"
+  },
+  {
+    "id": "804ec249",
+    "jp": "この魚は骨まで食べられますよ。",
+    "en": "You can even eat the bones in this fish.",
+    "audio": "804ec249.mp3"
+  },
+  {
+    "id": "4cecc475",
+    "jp": "あなたまで私を疑うのですか。",
+    "en": "Even you don't trust me?",
+    "audio": "4cecc475.mp3"
+  },
+  {
+    "id": "a22f1db5",
+    "jp": "明日は昼から夕方にかけて雨でしょう。",
+    "en": "Tomorrow, it will rain from noon through late afternoon.",
+    "audio": "a22f1db5.mp3"
+  },
+  {
+    "id": "67759808",
+    "jp": "九州から本州にかけて梅雨入りしました。",
+    "en": "The rainy season has set in Kyushu and Honshu.",
+    "audio": "67759808.mp3"
+  },
+  {
+    "id": "680c1f40",
+    "jp": "大阪において、国際会議が行われた。",
+    "en": "An international conference took place in Osaka.",
+    "audio": "680c1f40.mp3"
+  },
+  {
+    "id": "e0a85109",
+    "jp": "結果はホームページにおいて発表されます。",
+    "en": "The result will be announced on the homepage.",
+    "audio": "e0a85109.mp3"
+  },
+  {
+    "id": "bc1b7b6a",
+    "jp": "たとえ反対されても留学します。",
+    "en": "Even if I am opposed, I will study abroad.",
+    "audio": "bc1b7b6a.mp3"
+  },
+  {
+    "id": "6787070b",
+    "jp": "たとえ元気じゃなくても、家族への手紙には元気だと書きます。",
+    "en": "Even if I am not well, in a letter to my family, I will write that I am well.",
+    "audio": "6787070b.mp3"
+  },
+  {
+    "id": "b9c8631e",
+    "jp": "もしかすると彼の話は嘘かもしれない。",
+    "en": "He could be telling a lie.",
+    "audio": "b9c8631e.mp3"
+  },
+  {
+    "id": "19bf6ab6",
+    "jp": "もしかしたら、明日行けないかもしれません。",
+    "en": "I may not be able to come tomorrow.",
+    "audio": "19bf6ab6.mp3"
+  },
+  {
+    "id": "0c2cf834",
+    "jp": "お金持ちが必ずしも幸福だとは限らない。",
+    "en": "Being rich does not necessary mean happy.",
+    "audio": "0c2cf834.mp3"
+  },
+  {
+    "id": "07f64bd8",
+    "jp": "高いものが必ずしもいいものだとは限らない。",
+    "en": "Expensive items are not necessarily good.",
+    "audio": "07f64bd8.mp3"
+  },
+  {
+    "id": "8c09e861",
+    "jp": "合格した！まるで夢のようだ。",
+    "en": "I did it! I can't believe it!",
+    "audio": "8c09e861.mp3"
+  },
+  {
+    "id": "6e4887fe",
+    "jp": "彼の日本語はまるで日本人が話しているみたいに聞こえる。",
+    "en": "His Japanese is so natural that he sounds like a native speaker.",
+    "audio": "6e4887fe.mp3"
+  },
+  {
+    "id": "86f87865",
+    "jp": "あなたの言うことはまるで理解できない。",
+    "en": "I don't at all understand what you are saying.",
+    "audio": "86f87865.mp3"
+  },
+  {
+    "id": "07a0816e",
+    "jp": "旅行に行きたい。だけど暇がない。",
+    "en": "I love to go traveling but I have no time.",
+    "audio": "07a0816e.mp3"
+  },
+  {
+    "id": "6966f6e0",
+    "jp": "よくカラオケに行く。だけど歌は下手だ。",
+    "en": "I often go to a karaoke bar but I am not a good singer.",
+    "audio": "6966f6e0.mp3"
+  },
+  {
+    "id": "a6cad373",
+    "jp": "天気予報では午後から雨だそうです。ですから、傘を持っていった方がいいですよ。",
+    "en": "You'd better take an umbrella with you since the weather forecast is predicting rain in the afternoon.",
+    "audio": "a6cad373.mp3"
+  },
+  {
+    "id": "2c160017",
+    "jp": "明日から旅行に行きます。ですから、申し訳ありませんが、来週のパーティーには出席できません。",
+    "en": "I will be leaving on a trip tomorrow. Thus I'm sorry that I won't be able to come to the party next week.",
+    "audio": "2c160017.mp3"
+  },
+  {
+    "id": "dbee39a7",
+    "jp": "昨夜はコンサートに行くつもりだった。ところが病気で行けなくなった。",
+    "en": "I was planning to go to the concert last night but I couldn't go because I felt sick.",
+    "audio": "dbee39a7.mp3"
+  },
+  {
+    "id": "3d8de311",
+    "jp": "田中さんは私より若いと思っていた。ところが私より5歳も年上だった。",
+    "en": "I thought Tanaka-san was younger but he is actually 5 years older than I am.",
+    "audio": "3d8de311.mp3"
+  },
+  {
+    "id": "a11a983d",
+    "jp": "明日、試験でしょ。頑張ってね。ところで、来週の月曜日は空いてる？",
+    "en": "The exam will be tomorrow, right? I wish you well. By the way, will you be free next Monday?",
+    "audio": "a11a983d.mp3"
+  },
+  {
+    "id": "3ce2efb5",
+    "jp": "もうすぐ、今年も終わりですね。ところで、お正月はどうなさいますか。",
+    "en": "The year is to be over soon. Well, do you have any plans for the New Year?",
+    "audio": "3ce2efb5.mp3"
+  },
+  {
+    "id": "86613053",
+    "jp": "もし試験を受けていたなら、合格していたと思う。",
+    "en": "I would have passed the exam if I had taken it.",
+    "audio": "86613053.mp3"
+  },
+  {
+    "id": "e1d2ed47",
+    "jp": "もし彼が社長でなかったなら、会社は潰れていたと思う。",
+    "en": "If he had not been the president, the company would have gone bankrupt.",
+    "audio": "e1d2ed47.mp3"
+  },
+  {
+    "id": "c0a0cab8",
+    "jp": "もし、留学しなかったなら、今頃は国で結婚しているだろう。",
+    "en": "If I had not gone to study abroad, I probably would be married by now.",
+    "audio": "c0a0cab8.mp3"
+  },
+  {
+    "id": "7d7bdb0c",
+    "jp": "もし休みが取れたとしても、旅行には行かないつもりです。",
+    "en": "Even if I get a holiday, I don't think I will go on a trip.",
+    "audio": "7d7bdb0c.mp3"
+  },
+  {
+    "id": "8525809a",
+    "jp": "もしお金がたくさあったとしても、そんなものは買わない。",
+    "en": "Even if I had lots of money, I wouldn't buy such things.",
+    "audio": "8525809a.mp3"
+  },
+  {
+    "id": "ea117bc0",
+    "jp": "もし決勝戦に残ったとしたって、優勝は難しいでしょう。",
+    "en": "Even though they made to the final, it will be difficult to win the championship.",
+    "audio": "ea117bc0.mp3"
+  },
+  {
+    "id": "7c3a7b76",
+    "jp": "もしも生まれ変われるなら、男になりたい。",
+    "en": "If I were born again, I'd like to be a boy.",
+    "audio": "7c3a7b76.mp3"
+  },
+  {
+    "id": "7b73a50e",
+    "jp": "もしも地震が起きても、この家、丈夫だから倒れないでしょう。",
+    "en": "This house won't collapse in a big earthquake because it is well built.",
+    "audio": "7b73a50e.mp3"
+  },
+  {
+    "id": "e56a11a0",
+    "jp": "あの子にもしものことがあったら、どうしよう。",
+    "en": "What shall I do if something happens to that child?",
+    "audio": "e56a11a0.mp3"
+  },
+  {
+    "id": "9600352d",
+    "jp": "明日、新しい企画についての会議が行われることになっている。",
+    "en": "There is a meeting planned for tomorrow to discuss a new project.",
+    "audio": "9600352d.mp3"
+  },
+  {
+    "id": "e60b33d4",
+    "jp": "今度、大阪に転勤することになりました。",
+    "en": "I will be moving to Osaka office soon.",
+    "audio": "e60b33d4.mp3"
+  },
+  {
+    "id": "db586c58",
+    "jp": "毎朝、30分ジョギングすることにしています。",
+    "en": "I try to jog for half an hour every morning.",
+    "audio": "db586c58.mp3"
+  },
+  {
+    "id": "fddc4faa",
+    "jp": "「あれ？買い物に行かないの？」「うん、明日行くことにした。」",
+    "en": "\"Oh. You are not going shopping?\" \"No. I will go tomorrow instead.\"",
+    "audio": "fddc4faa.mp3"
+  },
+  {
+    "id": "8f012539",
+    "jp": "ピアノは、弾けることは弾けますが、上手くありません。",
+    "en": "I can play the piano but not that well.",
+    "audio": "8f012539.mp3"
+  },
+  {
+    "id": "b2ff4549",
+    "jp": "このバッグ、高いことは高いけれど、すごく使いやすいです。",
+    "en": "You may think this bag is expensive but it is very well designed.",
+    "audio": "b2ff4549.mp3"
+  },
+  {
+    "id": "cab9605c",
+    "jp": "鶏肉は、食べないことはないですが、あまり好きではありません。",
+    "en": "I eat chicken but I don't like it very much.",
+    "audio": "cab9605c.mp3"
+  },
+  {
+    "id": "420892a2",
+    "jp": "走れば間に合わないことはないよ。急ごう！",
+    "en": "We can still make it if we run. Let's hurry up!",
+    "audio": "420892a2.mp3"
+  },
+  {
+    "id": "5c108036",
+    "jp": "先生に今度のテストの範囲を聞いたところ、10課までだと言われた。",
+    "en": "I asked the teacher about the coming test and was told that it would cover up to Chapter 10.",
+    "audio": "5c108036.mp3"
+  },
+  {
+    "id": "0b3dd79a",
+    "jp": "歯が痛いので歯医者さんにいったところ、ひどい虫歯になっていると言われた。",
+    "en": "I went to see a dentist because I had a toothache, and I was told I had a bad cavity.",
+    "audio": "0b3dd79a.mp3"
+  },
+  {
+    "id": "861ac3bc",
+    "jp": "もう少しで遅刻するところだった。",
+    "en": "I was almost late.",
+    "audio": "861ac3bc.mp3"
+  },
+  {
+    "id": "593d64b7",
+    "jp": "あと少しで合格するところだったのに…。",
+    "en": "I almost passed the entrance exam.",
+    "audio": "593d64b7.mp3"
+  },
+  {
+    "id": "d192038d",
+    "jp": "先生に注意されて初めて、漢字の間違いに気が付いた。",
+    "en": "I didn't notice the mistake in kanji until the teacher pointed it out.",
+    "audio": "d192038d.mp3"
+  },
+  {
+    "id": "fe52792a",
+    "jp": "歌舞伎を見てはじめて、日本文化に興味を持った。",
+    "en": "I didn't have any interest in Japanese culture until I saw kabuki.",
+    "audio": "fe52792a.mp3"
+  },
+  {
+    "id": "b1f5c2fc",
+    "jp": "明るいうちに帰ってきなさい。",
+    "en": "You must come home before dark.",
+    "audio": "b1f5c2fc.mp3"
+  },
+  {
+    "id": "c0837439",
+    "jp": "何度も聞いているうちに歌詞を覚えた。",
+    "en": "I learned the lyrics by heart by listening to them many times.",
+    "audio": "c0837439.mp3"
+  },
+  {
+    "id": "14615754",
+    "jp": "忘れないうちに、メモをしておこう。",
+    "en": "I will make a quick note before I forget.",
+    "audio": "14615754.mp3"
+  },
+  {
+    "id": "1541084b",
+    "jp": "暑いわけだ。気温が36度もある。",
+    "en": "No wonder it feels hot. It is 36C.",
+    "audio": "1541084b.mp3"
+  },
+  {
+    "id": "e9b774c7",
+    "jp": "「田中さん、彼女に振られたらしいよ。」「なるほど、それで、元気がないわけだ。」",
+    "en": "\"It looks like Tanaka-san got dumped by his girlfriend.\" \"No wonder he looks unhappy.\"",
+    "audio": "e9b774c7.mp3"
+  },
+  {
+    "id": "9879965c",
+    "jp": "嫌いなわけではないが、肉はあまり食べない。",
+    "en": "It's not that I hate it, but I don't eat very much meat.",
+    "audio": "9879965c.mp3"
+  },
+  {
+    "id": "b971d5b6",
+    "jp": "テレビは見ないわけではないが、音楽を聴いている方が多い。",
+    "en": "I wouldn't say I don't watch TV but I spend more time listening to music.",
+    "audio": "b971d5b6.mp3"
+  },
+  {
+    "id": "02697c6b",
+    "jp": "あの強い相手に勝てるわけはない。",
+    "en": "It's impossible for me to beat such a strong opponent.",
+    "audio": "02697c6b.mp3"
+  },
+  {
+    "id": "0b749d17",
+    "jp": "「このパン、古くない？」「古い訳ないよ。昨日買ったんだから。」",
+    "en": "\"Isn't this bread too old?\" \"It shouldn't be old. I just bought it yesterday.\"",
+    "audio": "0b749d17.mp3"
+  },
+  {
+    "id": "8d0b0c4c",
+    "jp": "大事な会議があるから、休むわけにはいかない。",
+    "en": "I can't afford to be absent because I have a very important meeting.",
+    "audio": "8d0b0c4c.mp3"
+  },
+  {
+    "id": "d116d8eb",
+    "jp": "社長の命令だから、従わないわけにはいかない。",
+    "en": "I can't afford to disobey this order because it came from the president.",
+    "audio": "d116d8eb.mp3"
   }
 ]

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Play, Pause, SkipBack, SkipForward, RotateCcw, History, Settings, X, Eye, EyeOff } from 'lucide-react';
 import { Capacitor } from '@capacitor/core';
 import { NativeAudio } from '@capacitor-community/native-audio';
+import { MediaSession } from '@capgo/capacitor-media-session';
 
 const App = () => {
   const [phrases, setPhrases] = useState([]);
@@ -13,12 +14,27 @@ const App = () => {
   const [autoPlay, setAutoPlay] = useState(() => localStorage.getItem('autoPlay') === 'true');
   const [delay, setDelay] = useState(() => Number(localStorage.getItem('delay')) || 10000);
   const [alwaysShowEnglish, setAlwaysShowEnglish] = useState(() => localStorage.getItem('alwaysShowEnglish') === 'true');
+  const [hotspot, setHotspot] = useState(() => localStorage.getItem('hotspot') === 'true');
   const [loading, setLoading] = useState(true);
   const [debugStatus, setDebugStatus] = useState('');
+  const [iconDataUrl, setIconDataUrl] = useState(null);
 
   const audioRef = useRef(null);
   const timerRef = useRef(null);
   const isNative = Capacitor.isNativePlatform();
+
+  // Load icon as data URL for MediaSession (avoids capacitor:// unsupported URL error)
+  useEffect(() => {
+    if (!isNative) return;
+    fetch(`${window.location.origin}/icon.png`)
+      .then(res => res.blob())
+      .then(blob => {
+        const reader = new FileReader();
+        reader.onloadend = () => setIconDataUrl(reader.result);
+        reader.readAsDataURL(blob);
+      })
+      .catch(() => {});
+  }, [isNative]);
 
   // Refs for background-safe access in listeners
   const delayRef = useRef(delay);
@@ -47,6 +63,10 @@ const App = () => {
     alwaysShowEnglishRef.current = alwaysShowEnglish;
     localStorage.setItem('alwaysShowEnglish', alwaysShowEnglish);
   }, [alwaysShowEnglish]);
+
+  useEffect(() => {
+    localStorage.setItem('hotspot', hotspot);
+  }, [hotspot]);
 
   useEffect(() => { 
     phrasesRef.current = phrases; 
@@ -84,6 +104,19 @@ const App = () => {
         });
         
         await NativeAudio.play({ assetId: 'current' });
+
+        await MediaSession.setMetadata({
+          title: phrase.jp,
+          artist: phrase.en,
+          album: 'Japanese Phrase Book',
+          artwork: iconDataUrl ? [
+            { src: iconDataUrl, sizes: '512x512', type: 'image/png' }
+          ] : []
+        }).catch(() => {});
+        
+        await MediaSession.setPlaybackState({
+          playbackState: 'playing'
+        }).catch(() => {});
       } catch (e) {
         setDebugStatus(`Error: ${e.message}`);
         setIsPlaying(false);
@@ -136,6 +169,7 @@ const App = () => {
           NativeAudio.play({ assetId: 'silence' }).catch(() => {});
         } else {
           setIsPlaying(false);
+          MediaSession.setPlaybackState({ playbackState: 'paused' }).catch(() => {});
         }
       } else if (data.assetId === 'silence') {
         if (isWaitingRef.current && isPlayingRef.current) {
@@ -173,17 +207,18 @@ const App = () => {
   }, []);
 
   // 5. User Interaction Handlers
-  const togglePlay = () => {
+  const togglePlay = useCallback(() => {
     if (currentIndex === -1) {
       nextRandom();
       return;
     }
 
-    if (isPlaying) {
+    if (isPlayingRef.current) {
       if (isNative) {
         NativeAudio.stop({ assetId: 'current' }).catch(() => {});
         NativeAudio.stop({ assetId: 'silence' }).catch(() => {});
         isWaitingRef.current = false;
+        MediaSession.setPlaybackState({ playbackState: 'paused' }).catch(() => {});
       } else {
         audioRef.current?.pause();
       }
@@ -195,7 +230,13 @@ const App = () => {
       setDebugStatus('Playing...');
       playPhrase(currentIndex);
     }
-  };
+  }, [currentIndex, isNative, nextRandom, playPhrase]);
+
+  const replay = useCallback(() => {
+    if (currentIndex !== -1) {
+      playPhrase(currentIndex);
+    }
+  }, [currentIndex, playPhrase]);
 
   const handleEnded = () => {
     if (!isNative) {
@@ -209,11 +250,30 @@ const App = () => {
     }
   };
 
-  const replay = () => {
-    if (currentIndex !== -1) {
-      playPhrase(currentIndex);
-    }
-  };
+  // 6. Media Session Action Handlers
+  useEffect(() => {
+    if (!isNative) return;
+
+    MediaSession.setActionHandler({ action: 'play' }, () => {
+      togglePlay();
+    });
+    MediaSession.setActionHandler({ action: 'pause' }, () => {
+      togglePlay();
+    });
+    MediaSession.setActionHandler({ action: 'nexttrack' }, () => {
+      nextRandom();
+    });
+    MediaSession.setActionHandler({ action: 'previoustrack' }, () => {
+      replay();
+    });
+
+    return () => {
+      MediaSession.setActionHandler({ action: 'play' }, null);
+      MediaSession.setActionHandler({ action: 'pause' }, null);
+      MediaSession.setActionHandler({ action: 'nexttrack' }, null);
+      MediaSession.setActionHandler({ action: 'previoustrack' }, null);
+    };
+  }, [isNative, togglePlay, nextRandom, replay]);
 
   if (loading) return <div className="loading">Loading phrases...</div>;
 
@@ -221,7 +281,12 @@ const App = () => {
 
   return (
     <div className="container">
-      {/* Debug banner removed as requested implicitly by moving to polish phase */}
+      {hotspot && (
+        <div className="hotspot-overlay">
+          <div className="hotspot-left" onClick={replay} />
+          <div className="hotspot-right" onClick={nextRandom} />
+        </div>
+      )}
       <header>
         <h1>Japanese Phrase Book</h1>
         <button onClick={() => setShowHistory(true)} className="icon-button">
@@ -273,12 +338,21 @@ const App = () => {
 
         <div className="settings-strip">
           <label className="toggle">
-            <input 
-              type="checkbox" 
-              checked={alwaysShowEnglish} 
-              onChange={(e) => setAlwaysShowEnglish(e.target.checked)} 
+            <input
+              type="checkbox"
+              checked={alwaysShowEnglish}
+              onChange={(e) => setAlwaysShowEnglish(e.target.checked)}
             />
             <span>Always Show English</span>
+          </label>
+
+          <label className="toggle">
+            <input
+              type="checkbox"
+              checked={hotspot}
+              onChange={(e) => setHotspot(e.target.checked)}
+            />
+            <span>Hot Spot</span>
           </label>
 
           <div className="autoplay-settings">
